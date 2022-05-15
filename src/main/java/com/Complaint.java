@@ -43,8 +43,8 @@ public class Complaint {
 				output += "<td>" + message + "</td>";
 				// buttons
 				output += "<td><input name='btnUpdate' type='button' value='Update' "
-						+ "class='btnUpdate btn btn-secondary' data-itemid='" + complaintID + "'></td>"
-						+ "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger'data-itemid='"
+						+ "class='btnUpdate btn btn-secondary' data-complaintid='" + complaintID + "'></td>"
+						+ "<td><input name='btnRemove' type='button' value='Remove' class='btnRemove btn btn-danger'data-complaintid='"
 						+ complaintID + "'>" + "</td></tr>";
 			}
 			con.close();
@@ -80,7 +80,7 @@ public class Complaint {
 			String newComplaints = getComplaints();
 			output = "{\"status\":\"success\", \"data\": \"" + newComplaints + "\"}";
 		} catch (Exception e) {
-			output = "{\"status\":\"error\", \"data\":\"Error while inserting the item.\"}";
+			output = "{\"status\":\"error\", \"data\":\"Error while inserting the complaint.\"}";
 			System.err.println(e.getMessage());
 		}
 		return output;
